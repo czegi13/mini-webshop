@@ -1,5 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert} from 'typeorm'
 import * as bcrypt from 'bcrypt'
+import { OneToMany } from 'typeorm'
+import { Order } from 'src/orders/entities/order.entity'
 
 export enum UserRole{
     ADMIN = 'admin',
@@ -27,6 +29,9 @@ export class User{
         default: UserRole.CUSTOMER
     })
     role: UserRole
+
+    @OneToMany(() => Order, (order) => order.user)
+    orders: Order[]
 
     @BeforeInsert()
     async hashPassword(){
