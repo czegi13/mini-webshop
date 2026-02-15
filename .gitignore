@@ -1,0 +1,13 @@
+# --- ADATBÁZIS (Ezt mindenképp tiltsd le!) ---
+postgres-data/
+
+# --- RENDSZERFÁJLOK (Mivel Mac-et használsz) ---
+.DS_Store
+
+# --- KÖRNYEZETI VÁLTOZÓK (Titkos jelszavak helye) ---
+.env
+
+# --- NODE MODULES (Ez legyen mindenhol tiltva) ---
+node_modules/
+dist/
+build/
