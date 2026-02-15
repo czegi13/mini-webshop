@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { OrderItem } from "src/order-items/entities/order-item.entity";
 
 @Entity()
 export class Product{
@@ -14,4 +15,7 @@ export class Product{
 
     @Column({nullable: true})
     description: string
+
+    @OneToMany(() => OrderItem, (orderItem) => orderItem.product)
+    orderItems: OrderItem[]
 }

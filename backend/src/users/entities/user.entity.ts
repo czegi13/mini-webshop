@@ -8,7 +8,6 @@ export enum UserRole{
     CUSTOMER = 'customer'
 }
 
-
 @Entity()
 export class User{
     @PrimaryGeneratedColumn()
